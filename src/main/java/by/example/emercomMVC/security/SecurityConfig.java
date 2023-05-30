@@ -15,12 +15,12 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
-public class SpringSecurity {
+public class SecurityConfig {
 
     private final UserDetailsService userDetailsService;
 
     @Autowired
-    public SpringSecurity(UserDetailsService userDetailsService) {
+    public SecurityConfig(UserDetailsService userDetailsService) {
         this.userDetailsService = userDetailsService;
     }
 
@@ -33,11 +33,9 @@ public class SpringSecurity {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/register/**").permitAll()
-                .requestMatchers("/index").permitAll()
-                .requestMatchers("/**", "/crud").permitAll()
-                .requestMatchers("/user/**").permitAll()
-                .requestMatchers("/users").permitAll()
+                .requestMatchers("/register/**","/login/**").permitAll()
+                .requestMatchers("/**").hasAnyRole("USER","ADMIN")
+                .anyRequest().authenticated()
                 .and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
@@ -48,9 +46,10 @@ public class SpringSecurity {
                 .defaultSuccessUrl("/index")
                 .permitAll()
                 .and()
-                .logout(logout -> logout
-                        .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                        .permitAll());
+                .logout()
+                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+                .logoutSuccessUrl("/login")
+                .permitAll();
         return http.build();
     }
 

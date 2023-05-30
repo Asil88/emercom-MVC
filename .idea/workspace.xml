@@ -4,21 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa641b31-061c-49d4-811d-19c16a4a0dec" name="Changes" comment="many thing's">
+    <list default="true" id="fa641b31-061c-49d4-811d-19c16a4a0dec" name="Changes" comment="refactoring everything + add filtration logic + add check password at update a user">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/example/emercomMVC/controller/SecurityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/example/emercomMVC/controller/SecurityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/example/emercomMVC/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/example/emercomMVC/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/example/emercomMVC/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/example/emercomMVC/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/example/emercomMVC/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/example/emercomMVC/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/example/emercomMVC/security/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/example/emercomMVC/security/CustomUserDetailsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/example/emercomMVC/security/SpringSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/example/emercomMVC/security/SpringSecurity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/example/emercomMVC/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/example/emercomMVC/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sec/users.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/add-user.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/crud.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/crud.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/update-user.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/update-user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/example/emercomMVC/security/SpringSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/example/emercomMVC/security/SecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +169,7 @@
       <workItem from="1685350604461" duration="2727000" />
       <workItem from="1685378697089" duration="1060000" />
       <workItem from="1685384648243" duration="20870000" />
-      <workItem from="1685437035263" duration="42192000" />
+      <workItem from="1685437035263" duration="44110000" />
     </task>
     <task id="LOCAL-00001" summary="many thing's">
       <created>1685463342689</created>
@@ -190,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685463342689</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="refactoring everything + add filtration logic + add check password at update a user">
+      <created>1685487634325</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1685487634325</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,6 +216,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="many thing's" />
-    <option name="LAST_COMMIT_MESSAGE" value="many thing's" />
+    <MESSAGE value="refactoring everything + add filtration logic + add check password at update a user" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring everything + add filtration logic + add check password at update a user" />
   </component>
 </project>
