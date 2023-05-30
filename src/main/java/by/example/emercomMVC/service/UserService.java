@@ -10,8 +10,11 @@ import org.springframework.stereotype.Service;
 
 
 import java.util.Arrays;
-import java.util.Optional;
+import java.util.List;
+import java.util.NoSuchElementException;
 
+
+import static java.util.regex.Pattern.matches;
 
 
 @Service
@@ -42,17 +45,31 @@ public class UserService {
         userRepository.save(user);
     }
 
+    public List<User> findAll() {
+        return userRepository.findAll();
+    }
+
+    public List<User> findByFilter(String filter){
+        return userRepository.findByName(filter);
+    }
+
     public User findByEmail(String email) {
         return userRepository.findByEmail(email);
     }
 
-    public Optional<User> getUserById(Long id) {
-        return userRepository.findById(id);
+    public boolean isPasswordCorrect(long id, String password) {
+        String storedPassword = userRepository.findPasswordById(id);
+        passwordEncoder.encode(password);
+        return matches(password, storedPassword);
     }
 
-    public void updateUserById(User user) {
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
-        userRepository.saveAndFlush(user);
+    public void updateUser(User user) {
+        userRepository.save(user);
+    }
+
+    public User findUserById(Long id) {
+        return userRepository.findById(id)
+                .orElseThrow(() -> new NoSuchElementException("User not found with id: " + id));
     }
 
     public boolean deleteUserById(Long id) {

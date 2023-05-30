@@ -17,11 +17,15 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @EnableWebSecurity
 public class SpringSecurity {
 
+    private final UserDetailsService userDetailsService;
+
     @Autowired
-    private UserDetailsService userDetailsService;
+    public SpringSecurity(UserDetailsService userDetailsService) {
+        this.userDetailsService = userDetailsService;
+    }
 
     @Bean
-    public static PasswordEncoder passwordEncoder(){
+    public static PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
@@ -31,7 +35,7 @@ public class SpringSecurity {
                 .authorizeHttpRequests()
                 .requestMatchers("/register/**").permitAll()
                 .requestMatchers("/index").permitAll()
-                .requestMatchers("/**","/crud").permitAll()
+                .requestMatchers("/**", "/crud").permitAll()
                 .requestMatchers("/user/**").permitAll()
                 .requestMatchers("/users").permitAll()
                 .and()
@@ -45,8 +49,8 @@ public class SpringSecurity {
                 .permitAll()
                 .and()
                 .logout(logout -> logout
-                                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                                .permitAll());
+                        .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+                        .permitAll());
         return http.build();
     }
 

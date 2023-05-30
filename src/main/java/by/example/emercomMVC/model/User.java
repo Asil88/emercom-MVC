@@ -1,6 +1,8 @@
 package by.example.emercomMVC.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,9 +28,12 @@ public class User
     @Column(nullable=false)
     private String name;
 
+    @NotEmpty(message = "Email should not be empty")
+    @Email
     @Column(nullable=false, unique=true)
     private String email;
 
+    @NotEmpty(message = "Password should not be empty")
     @Column(nullable=false)
     private String password;
 
