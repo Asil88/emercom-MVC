@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 
-import static java.util.regex.Pattern.matches;
+
 
 
 @Service
@@ -49,7 +49,7 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public List<User> findByFilter(String filter){
+    public List<User> findByFilter(String filter) {
         return userRepository.findByName(filter);
     }
 
@@ -59,8 +59,7 @@ public class UserService {
 
     public boolean isPasswordCorrect(long id, String password) {
         String storedPassword = userRepository.findPasswordById(id);
-        passwordEncoder.encode(password);
-        return matches(password, storedPassword);
+        return passwordEncoder.matches(password, storedPassword);
     }
 
     public void updateUser(User user) {

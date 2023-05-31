@@ -1,7 +1,6 @@
 package by.example.emercomMVC.controller;
 
 
-
 import by.example.emercomMVC.model.User;
 import by.example.emercomMVC.service.UserService;
 import jakarta.validation.Valid;
