@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fa641b31-061c-49d4-811d-19c16a4a0dec" name="Changes" comment="fix README.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/example/emercomMVC/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/example/emercomMVC/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/example/emercomMVC/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/example/emercomMVC/security/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/example/emercomMVC/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/example/emercomMVC/service/UserService.java" afterDir="false" />
     </list>
